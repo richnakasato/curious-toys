@@ -7,9 +7,9 @@
  * (given that they are of equal length).
  *
  * Turns out I was wrong.  You can use string::compare and/or strcmp to compare
- * equal length strings, as opposed to using a "digit" wise compare.  It seems
- * like the reason string compares works well for equal length strings, as shown
- * in the examples below.
+ * equal length strings, as opposed to using a "digit" wise compare.  We only
+ * need to check for string lengths before we use compare for everything to
+ * work.
  *
  */
 
