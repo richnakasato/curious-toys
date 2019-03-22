@@ -1,4 +1,4 @@
-//#define DO_OP
+#define DO_OP
 
 #include <iostream>
 #include <string>
@@ -7,11 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-class Thing
+struct Thing
 {
-    int i=0;
-
-public:
     Thing()
     {
         std::cout << "ctor" << std::endl;
