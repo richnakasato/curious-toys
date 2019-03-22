@@ -7,6 +7,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+class Thing
+{
+    int i=0;
+
+public:
+    Thing()
+    {
+        std::cout << "ctor" << std::endl;
+    }
+
+    Thing(const int& v)
+    {
+        std::cout << "cp ctor" << std::endl;
+    }
+
+#ifdef DO_OP
+    Thing& operator=(const int& other)
+    {
+        std::cout << "cp assn" << std::endl;
+        return *this;
+    }
+#endif //DO_OP
+
+    ~Thing()
+    {
+        std::cout << "dtor" << std::endl;
+    }
+};
+
 class String : public std::string
 {
     char* s;
@@ -61,13 +90,18 @@ public:
 
 int main()
 {
+    /*
     const char* ccp;
     String a;
     a = "short";
     ccp = a.foo();
     a = "this string should be long";
     ccp = a.foo();
-
     std::cout << "--\n" << ccp << std::endl;
+    */
+
+    Thing a;
+    a = 1;
+
     return 0;
 }
